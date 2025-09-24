@@ -1,0 +1,18 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://mission.schemas/v1/entities/item.json",
+    "title": "Item",
+    "description": "A stowable thing (food, tool, med, clothing, etc.). Logical identity; not a physical tag.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+      "name": { "type": "string", "minLength": 1, "maxLength": 200 },
+      "consumable": { "type": "boolean" },
+      "mass_g": { "$ref": "https://mission.schemas/v1/common.json#/$defs/gramsInt" }
+    },
+    "required": ["id", "name", "consumable"],
+    "examples": [
+      { "id": "018f1b3c-9c8a-7a1b-b2c3-4d5e6f708091", "name": "Pasta Primavera Pouch", "consumable": true, "mass_g": 420 }
+    ]
+  }

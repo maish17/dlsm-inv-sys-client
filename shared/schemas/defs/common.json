@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mission.schemas/v1/common.json",
+  "title": "Common Primitives & Enums",
+  "description": "Canonical primitives and enums for the Mission Inventory System.",
+  "$comment": "Governed by Schema Governance v1.4. Changes follow MAJOR/MINOR/PATCH with ICD refs.",
+  "$defs": {
+    "uuid": {
+      "type": "string",
+      "description": "UUID (any version). Prefer v7 when generating new IDs.",
+      "format": "uuid",
+      "examples": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"]
+    },
+    "uuidV7": {
+      "type": "string",
+      "description": "UUID v7 (time-ordered). Enforces version nibble=7 and RFC 4122 variant.",
+      "allOf": [
+        { "format": "uuid" },
+        { "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-7[0-9a-fA-F]{3}-[89ABab][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" }
+      ],
+      "examples": ["018f1b3c-9c8a-7a1b-b2c3-4d5e6f708091"]
+    },
+    "ulid": {
+      "type": "string",
+      "description": "ULID (Crockford Base32, 26 chars, uppercase).",
+      "pattern": "^[0-9A-HJKMNP-TV-Z]{26}$",
+      "examples": ["01HZE7YF1V2J3K4M5N6P7Q8R9S"]
+    },
+    "timestamp": {
+      "type": "string",
+      "description": "UTC RFC3339/ISO-8601 with 'Z'; allow 0 or exactly 3 fractional digits for determinism.",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$",
+      "examples": ["2025-09-09T16:00:00Z", "2025-09-09T16:00:00.123Z"]
+    },
+    "tagUid": {
+      "type": "string",
+      "description": "Uppercase hex tag UID without separators; NFC UIDs are typically 8, 14, or 20 hex chars.",
+      "pattern": "^(?:[0-9A-F]{8}|[0-9A-F]{14}|[0-9A-F]{20})$",
+      "minLength": 8,
+      "maxLength": 20,
+      "examples": ["04A1B2C3", "04A1B2C3D4E5F6", "04A1B2C3D4E5F60708A1"]
+    },
+    "zoneCode": {
+      "type": "string",
+      "description": "Canonical uppercase segmented code (1–8 segments, A–Z/0–9).",
+      "pattern": "^[A-Z0-9]+(?:-[A-Z0-9]+){0,7}$",
+      "minLength": 1,
+      "maxLength": 64,
+      "examples": ["A1-B2-L1-BINA", "RACK3-ROW2-LEVEL1"]
+    },
+    "gramsInt": {
+      "type": "integer",
+      "description": "Mass in grams (g), integer, SI base unit.",
+      "minimum": 0,
+      "maximum": 1000000,
+      "examples": [0, 250, 12000]
+    },
+    "microgramsInt": {
+      "type": "integer",
+      "description": "Nutrition quantity in micrograms (µg), integer, SI base unit.",
+      "minimum": 0,
+      "maximum": 1000000000,
+      "examples": [0, 500, 1200000]
+    },
+    "EventKind": {
+      "type": "string",
+      "description": "Ingress event verb (closed set).",
+      "enum": ["BIND", "UNBIND", "CHECKIN", "CHECKOUT", "RETURN", "MOVE"]
+    },
+    "ObjectType": {
+      "type": "string",
+      "description": "Target object type (closed set).",
+      "enum": ["ITEM", "CONTAINER"]
+    },
+    "TxStatus": {
+      "type": "string",
+      "description": "Checkout transaction status (closed set).",
+      "enum": ["OPEN", "RETURNED", "CONSUMED", "LOST"]
+    },
+    "TagKind": {
+      "type": "string",
+      "description": "Physical tag medium (closed set).",
+      "enum": ["NFC_HF"]
+    },
+    "Role": {
+      "type": "string",
+      "description": "Actor role (closed set).",
+      "enum": ["ADMIN", "GROUND", "ASTRO", "VIEW"]
+    }
+  }
+}

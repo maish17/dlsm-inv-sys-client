@@ -1,0 +1,17 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://mission.schemas/v1/entities/container.json",
+    "title": "Container",
+    "description": "A CTB/box that can hold Items or other Containers (nesting ≤ 5).",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+      "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+      "label": { "type": "string", "minLength": 1, "maxLength": 120 }
+    },
+    "required": ["id", "name"],
+    "examples": [
+      { "id": "018f1b3c-9c8a-7a1b-b2c3-4d5e6f7080a2", "name": "CTB-Alpha", "label": "Food Bin A" }
+    ]
+  }

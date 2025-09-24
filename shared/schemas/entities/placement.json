@@ -1,0 +1,30 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://mission.schemas/v1/entities/placement.json",
+    "title": "Placement",
+    "description": "Current location snapshot for an object (Item or Container). Read-model.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "objectType": { "$ref": "https://mission.schemas/v1/common.json#/$defs/ObjectType" },
+      "objectId": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+      "zoneId": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+      "ctbPath": {
+        "type": "array",
+        "items": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+        "minItems": 0,
+        "maxItems": 5
+      },
+      "updatedAt": { "$ref": "https://mission.schemas/v1/common.json#/$defs/timestamp" }
+    },
+    "required": ["objectType", "objectId", "ctbPath", "updatedAt"],
+    "examples": [
+      {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-b2c3-4d5e6f7080d5",
+        "zoneId": "018f1b3c-9c8a-7a1b-b2c3-4d5e6f7080e6",
+        "ctbPath": ["018f1b3c-9c8a-7a1b-b2c3-4d5e6f7080a2"],
+        "updatedAt": "2025-09-09T16:00:00Z"
+      }
+    ]
+  }
