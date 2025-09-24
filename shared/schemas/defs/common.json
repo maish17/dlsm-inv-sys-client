@@ -5,6 +5,32 @@
   "description": "Canonical primitives and enums for the Mission Inventory System.",
   "$comment": "Governed by Schema Governance v1.4. Changes follow MAJOR/MINOR/PATCH with ICD refs.",
   "$defs": {
+    "deviceCode": {
+      "type": "string",
+      "description": "Logical device identifier (kiosk, scanner, etc.).",
+      "pattern": "^[A-Z0-9-]{3,40}$"
+    },
+    "semver": {
+      "type": "string",
+      "description": "Semantic version (optionally prerelease).",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[A-Za-z0-9.-]+)?$"
+    },
+    "ErrorCode": {
+      "type": "string",
+      "description": "Stable server error codes for per-event results.",
+      "enum": [
+        "SCHEMA_INVALID",
+        "UNKNOWN_OBJECT",
+        "TAG_IN_USE",
+        "TAG_NOT_BOUND",
+        "PLACEMENT_CONFLICT",
+        "TX_NOT_FOUND",
+        "UNAUTHORIZED_DEVICE",
+        "RATE_LIMITED",
+        "SERVER_BUSY",
+        "INTERNAL_ERROR"
+      ]
+    },
     "uuid": {
       "type": "string",
       "description": "UUID (any version). Prefer v7 when generating new IDs.",

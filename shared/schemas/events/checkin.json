@@ -1,0 +1,37 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://mission.schemas/v1/events/checkin.json",
+    "title": "Check-In",
+    "description": "Place an object into a zone or into a nested CTB path (updates placement).",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "objectType": { "$ref": "https://mission.schemas/v1/common.json#/$defs/ObjectType" },
+      "objectId":   { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+      "zoneId":     { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+      "ctbPath": {
+        "type": "array",
+        "items": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+        "minItems": 0,
+        "maxItems": 5,
+        "uniqueItems": true
+      },
+      "note": { "type": "string", "minLength": 1, "maxLength": 200 }
+    },
+    "required": ["objectType", "objectId", "ctbPath"],
+    "anyOf": [
+      {
+        "type": "object",
+        "properties": { "zoneId": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" } },
+        "required": ["zoneId"]
+      },
+      {
+        "type": "object",
+        "properties": { "ctbPath": { "type": "array", "minItems": 1 } },
+        "required": ["ctbPath"]
+      }
+    ],
+    "examples": [
+      { "objectType": "ITEM", "objectId": "018f1b3c-9c8a-7a1b-b2c3-4d5e6f7080cc", "zoneId": "018f1b3c-9c8a-7a1b-b2c3-4d5e6f7080aa", "ctbPath": [] }
+    ]
+  }

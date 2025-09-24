@@ -1,0 +1,54 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://mission.schemas/v1/ops/event-batch-request.json",
+    "title": "Event Batch Request",
+    "description": "Device-submitted batch of event envelopes with device metadata.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+         "deviceCode": { "$ref": "https://mission.schemas/v1/common.json#/$defs/deviceCode" },
+         "swVersion":  { "$ref": "https://mission.schemas/v1/common.json#/$defs/semver" },
+      "batchId":    { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+      "producedAt": { "$ref": "https://mission.schemas/v1/common.json#/$defs/timestamp" },
+      "seqStart":   { "type": "integer", "minimum": 0 },
+      "events": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 100,
+        "items": {
+            "allOf": [
+              { "$ref": "https://mission.schemas/v1/events/event.json" },
+              {
+                "type": "object",
+                "properties": {
+                  "eventKey": {
+                    "$ref": "https://mission.schemas/v1/events/event.json#/properties/eventKey"
+                  }
+                },
+                "required": ["eventKey"]
+              }
+            ]
+          }
+      }
+    },
+    "required": ["deviceCode", "producedAt", "events"],
+    "examples": [
+      {
+        "deviceCode": "KIOSK-01",
+        "swVersion": "0.1.0",
+        "batchId": "018f1b3c-9c8a-7a1b-b2c3-4d5e6f708200",
+        "producedAt": "2025-09-09T16:00:00Z",
+        "seqStart": 42,
+        "events": [
+          {
+            "eventId": "018f1b3c-9c8a-7a1b-b2c3-4d5e6f708201",
+            "eventKey": "KIOSK-01:1736200000000:42",
+            "producedAt": "2025-09-09T16:00:00Z",
+            "deviceCode": "KIOSK-01",
+            "kind": "CHECKIN",
+            "payload": { "objectType": "ITEM", "objectId": "018f1b3c-...", "zoneId": "018f1b3c-...", "ctbPath": [] }
+          }
+        ]
+      }
+    ]
+  }

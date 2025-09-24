@@ -13,11 +13,31 @@
         "type": "array",
         "items": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
         "minItems": 0,
-        "maxItems": 5
+        "maxItems": 5,
+        "uniqueItems": true
       },
       "updatedAt": { "$ref": "https://mission.schemas/v1/common.json#/$defs/timestamp" }
     },
     "required": ["objectType", "objectId", "ctbPath", "updatedAt"],
+    "anyOf": [
+        {
+            "type": "object",
+            "properties": {
+                "zoneId": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" }
+            },
+            "required": ["zoneId"]
+        },
+        {
+            "type": "object",
+            "properties": {
+                "ctbPath": {
+                    "type": "array",
+                    "minItems": 1
+                }
+            },
+            "required": ["ctbPath"]
+        }
+    ],
     "examples": [
       {
         "objectType": "ITEM",

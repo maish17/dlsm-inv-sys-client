@@ -1,0 +1,34 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://mission.schemas/v1/events/return.json",
+    "title": "Return",
+    "description": "Return an object previously checked out (closes the transaction).",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "txId":       { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+      "objectType": { "$ref": "https://mission.schemas/v1/common.json#/$defs/ObjectType" },
+      "objectId":   { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+      "note":       { "type": "string", "minLength": 1, "maxLength": 200 }
+    },
+    "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "txId": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" }
+          },
+          "required": ["txId"]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "objectType": { "$ref": "https://mission.schemas/v1/common.json#/$defs/ObjectType" },
+            "objectId":   { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" }
+          },
+          "required": ["objectType", "objectId"]
+        }
+      ],
+    "examples": [
+      { "txId": "018f1b3c-9c8a-7a1b-b2c3-4d5e6f7080de" }
+    ]
+  }

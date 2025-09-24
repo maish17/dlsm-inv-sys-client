@@ -31,4 +31,41 @@ for (const f of files) {
     console.error(e?.message ?? e);
   }
 }
+
+// now compile events (payloads first, then envelope)
+const evDir = "shared/schemas/events";
+const evAll = fs.readdirSync(evDir).filter((f) => f.endsWith(".json"));
+const evPayloads = evAll.filter((f) => f !== "event.json").sort();
+const evEnvelope = evAll.filter((f) => f === "event.json");
+for (const f of [...evPayloads, ...evEnvelope]) {
+  const p = path.join(evDir, f);
+  try {
+    ajv.compile(JSON.parse(fs.readFileSync(p, "utf8")));
+    console.log(`✓ ${p} is valid`);
+  } catch (e) {
+    errors++;
+    console.error(`✗ ${p} invalid`);
+    console.error(e?.message ?? e);
+  }
+}
+
+// compile ops (request/response)
+const opsDir = "shared/schemas/ops";
+if (fs.existsSync(opsDir)) {
+  const opsFiles = fs
+    .readdirSync(opsDir)
+    .filter((f) => f.endsWith(".json"))
+    .sort();
+  for (const f of opsFiles) {
+    const p = path.join(opsDir, f);
+    try {
+      ajv.compile(JSON.parse(fs.readFileSync(p, "utf8")));
+      console.log(`✓ ${p} is valid`);
+    } catch (e) {
+      errors++;
+      console.error(`✗ ${p} invalid`);
+      console.error(e?.message ?? e);
+    }
+  }
+}
 process.exit(errors === 0 ? 0 : 1);

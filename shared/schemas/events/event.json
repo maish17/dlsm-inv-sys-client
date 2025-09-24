@@ -1,0 +1,54 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://mission.schemas/v1/events/event.json",
+    "title": "Event Envelope",
+    "description": "Common envelope for all ingress events.",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "eventId":    { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+      "eventKey":   { "type": "string", "description": "Idempotency key. Recommend deviceCode:epochMs:seq.", "pattern": "^[A-Z0-9-]{3,40}:[0-9]{13}:[0-9]{1,6}$" },
+      "producedAt": { "$ref": "https://mission.schemas/v1/common.json#/$defs/timestamp" },
+      "deviceCode": { "$ref": "https://mission.schemas/v1/common.json#/$defs/deviceCode" },
+      "actorId":    { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+      "kind":       { "$ref": "https://mission.schemas/v1/common.json#/$defs/EventKind" },
+      "payload":    { "type": "object" }
+    },
+    "required": ["eventId", "producedAt", "kind", "payload"],
+    "allOf": [
+      {
+        "if":   { "properties": { "kind": { "const": "BIND" } }, "required": ["kind"] },
+        "then": { "properties": { "payload": { "$ref": "https://mission.schemas/v1/events/bind.json" } } }
+      },
+      {
+        "if":   { "properties": { "kind": { "const": "UNBIND" } }, "required": ["kind"] },
+        "then": { "properties": { "payload": { "$ref": "https://mission.schemas/v1/events/unbind.json" } } }
+      },
+      {
+        "if":   { "properties": { "kind": { "const": "CHECKIN" } }, "required": ["kind"] },
+        "then": { "properties": { "payload": { "$ref": "https://mission.schemas/v1/events/checkin.json" } } }
+      },
+      {
+        "if":   { "properties": { "kind": { "const": "CHECKOUT" } }, "required": ["kind"] },
+        "then": { "properties": { "payload": { "$ref": "https://mission.schemas/v1/events/checkout.json" } } }
+      },
+      {
+        "if":   { "properties": { "kind": { "const": "RETURN" } }, "required": ["kind"] },
+        "then": { "properties": { "payload": { "$ref": "https://mission.schemas/v1/events/return.json" } } }
+      },
+      {
+        "if":   { "properties": { "kind": { "const": "MOVE" } }, "required": ["kind"] },
+        "then": { "properties": { "payload": { "$ref": "https://mission.schemas/v1/events/move.json" } } }
+      }
+    ],
+    "examples": [
+      {
+        "eventId": "018f1b3c-9c8a-7a1b-b2c3-4d5e6f708111",
+        "eventKey": "KIOSK-01:1736200000000:42",
+        "producedAt": "2025-09-09T16:00:00Z",
+        "deviceCode": "KIOSK-01",
+        "kind": "CHECKIN",
+        "payload": { "objectType": "ITEM", "objectId": "018f1b3c-...", "zoneId": "018f1b3c-...", "ctbPath": [] }
+      }
+    ]
+  }
