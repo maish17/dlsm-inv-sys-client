@@ -1,71 +1,71 @@
-// scripts/compile-schemas.mjs
 import fs from "node:fs";
 import path from "node:path";
-import Ajv from "ajv/dist/2020.js";
+import { pathToFileURL } from "node:url";
+import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
 
-const ajv = new Ajv({ strict: true, allErrors: true });
+const SCHEMA_ROOT = path.resolve("shared/schemas");
+
+const ajv = new Ajv2020({ strict: true, allErrors: true });
 addFormats(ajv);
 
-// preload common by its $id (https://mission.schemas/v1/common.json)
-const common = JSON.parse(
-  fs.readFileSync("shared/schemas/defs/common.json", "utf8")
-);
-ajv.addSchema(common);
+const readJson = (file) => JSON.parse(fs.readFileSync(file, "utf8"));
+const rel = (p) => path.relative(process.cwd(), p);
 
-const dir = "shared/schemas/entities";
-const files = fs
-  .readdirSync(dir)
-  .filter((f) => f.endsWith(".json"))
-  .sort();
-
-let errors = 0;
-for (const f of files) {
-  const p = path.join(dir, f);
-  try {
-    ajv.compile(JSON.parse(fs.readFileSync(p, "utf8")));
-    console.log(`✓ ${p} is valid`);
-  } catch (e) {
-    errors++;
-    console.error(`✗ ${p} invalid`);
-    console.error(e?.message ?? e);
-  }
-}
-
-// now compile events (payloads first, then envelope)
-const evDir = "shared/schemas/events";
-const evAll = fs.readdirSync(evDir).filter((f) => f.endsWith(".json"));
-const evPayloads = evAll.filter((f) => f !== "event.json").sort();
-const evEnvelope = evAll.filter((f) => f === "event.json");
-for (const f of [...evPayloads, ...evEnvelope]) {
-  const p = path.join(evDir, f);
-  try {
-    ajv.compile(JSON.parse(fs.readFileSync(p, "utf8")));
-    console.log(`✓ ${p} is valid`);
-  } catch (e) {
-    errors++;
-    console.error(`✗ ${p} invalid`);
-    console.error(e?.message ?? e);
-  }
-}
-
-// compile ops (request/response)
-const opsDir = "shared/schemas/ops";
-if (fs.existsSync(opsDir)) {
-  const opsFiles = fs
-    .readdirSync(opsDir)
-    .filter((f) => f.endsWith(".json"))
+const collectJsonFiles = (dir) => {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  return entries
+    .flatMap((e) => {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) return collectJsonFiles(p);
+      return e.isFile() && p.endsWith(".json") ? [p] : [];
+    })
     .sort();
-  for (const f of opsFiles) {
-    const p = path.join(opsDir, f);
+};
+
+const files = collectJsonFiles(SCHEMA_ROOT);
+const fileId = new Map();
+
+let loadFailures = 0;
+for (const file of files) {
+  try {
+    const schema = readJson(file);
+    const id = pathToFileURL(path.resolve(file)).href;
+    ajv.addSchema(schema, id);
+    fileId.set(file, id);
+  } catch (err) {
+    loadFailures++;
+    console.error(`✗ unreadable schema: ${rel(file)}`);
+    console.error(err?.message ?? err);
+  }
+}
+
+let compiledOk = 0;
+let compiledFail = 0;
+
+for (const dir of ["entities", "events", "ops"]) {
+  const abs = path.join(SCHEMA_ROOT, dir);
+  for (const file of collectJsonFiles(abs)) {
+    const id = fileId.get(file);
     try {
-      ajv.compile(JSON.parse(fs.readFileSync(p, "utf8")));
-      console.log(`✓ ${p} is valid`);
-    } catch (e) {
-      errors++;
-      console.error(`✗ ${p} invalid`);
-      console.error(e?.message ?? e);
+      ajv.compile({ $ref: id });
+      console.log(`✓ ${rel(file)} is valid`);
+      compiledOk++;
+    } catch (err) {
+      compiledFail++;
+      console.error(`✗ ${rel(file)} invalid`);
+      console.error(err?.message ?? err);
     }
   }
 }
-process.exit(errors === 0 ? 0 : 1);
+
+if (compiledFail || loadFailures) {
+  console.log(
+    `\nSummary: ${compiledOk} passed, ${compiledFail} failed` +
+      (loadFailures ? `, ${loadFailures} unreadable.` : ".")
+  );
+  process.exit(1);
+} else {
+  console.log(`\nSummary: ALL PASSED (${compiledOk} files).`);
+  process.exit(0);
+}

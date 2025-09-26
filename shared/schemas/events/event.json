@@ -1,44 +1,43 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://mission.schemas/v1/events/event.json",
     "title": "Event Envelope",
     "description": "Common envelope for all ingress events.",
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "eventId":    { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+      "eventId":    { "$ref": "../defs/common.json#/$defs/uuidV7" },
       "eventKey":   { "type": "string", "description": "Idempotency key. Recommend deviceCode:epochMs:seq.", "pattern": "^[A-Z0-9-]{3,40}:[0-9]{13}:[0-9]{1,6}$" },
-      "producedAt": { "$ref": "https://mission.schemas/v1/common.json#/$defs/timestamp" },
-      "deviceCode": { "$ref": "https://mission.schemas/v1/common.json#/$defs/deviceCode" },
-      "actorId":    { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
-      "kind":       { "$ref": "https://mission.schemas/v1/common.json#/$defs/EventKind" },
+      "producedAt": { "$ref": "../defs/common.json#/$defs/timestamp" },
+      "deviceCode": { "$ref": "../defs/common.json#/$defs/deviceCode" },
+      "actorId":    { "$ref": "../defs/common.json#/$defs/uuidV7" },
+      "kind":       { "$ref": "../defs/common.json#/$defs/EventKind" },
       "payload":    { "type": "object" }
     },
     "required": ["eventId", "producedAt", "kind", "payload"],
     "allOf": [
       {
         "if":   { "properties": { "kind": { "const": "BIND" } }, "required": ["kind"] },
-        "then": { "properties": { "payload": { "$ref": "https://mission.schemas/v1/events/bind.json" } } }
+        "then": { "properties": { "payload": { "$ref": "./bind.json" } } } 
       },
       {
         "if":   { "properties": { "kind": { "const": "UNBIND" } }, "required": ["kind"] },
-        "then": { "properties": { "payload": { "$ref": "https://mission.schemas/v1/events/unbind.json" } } }
+        "then": { "properties": { "payload": { "$ref": "./unbind.json" } } }
       },
       {
         "if":   { "properties": { "kind": { "const": "CHECKIN" } }, "required": ["kind"] },
-        "then": { "properties": { "payload": { "$ref": "https://mission.schemas/v1/events/checkin.json" } } }
+        "then": { "properties": { "payload": { "$ref": "./checkin.json" } } }
       },
       {
         "if":   { "properties": { "kind": { "const": "CHECKOUT" } }, "required": ["kind"] },
-        "then": { "properties": { "payload": { "$ref": "https://mission.schemas/v1/events/checkout.json" } } }
+        "then": { "properties": { "payload": { "$ref": "./checkout.json" } } }
       },
       {
         "if":   { "properties": { "kind": { "const": "RETURN" } }, "required": ["kind"] },
-        "then": { "properties": { "payload": { "$ref": "https://mission.schemas/v1/events/return.json" } } }
+        "then": { "properties": { "payload": { "$ref": "./return.json" } } }
       },
       {
         "if":   { "properties": { "kind": { "const": "MOVE" } }, "required": ["kind"] },
-        "then": { "properties": { "payload": { "$ref": "https://mission.schemas/v1/events/move.json" } } }
+        "then": { "properties": { "payload": { "$ref": "./move.json" } } }
       }
     ],
     "examples": [

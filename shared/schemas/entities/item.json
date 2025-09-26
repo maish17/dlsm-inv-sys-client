@@ -1,15 +1,14 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://mission.schemas/v1/entities/item.json",
     "title": "Item",
     "description": "A stowable thing (food, tool, med, clothing, etc.). Logical identity; not a physical tag.",
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "id": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+      "id": { "$ref": "../defs/common.json#/$defs/uuidV7" },
       "name": { "type": "string", "minLength": 1, "maxLength": 200 },
       "consumable": { "type": "boolean" },
-      "mass_g": { "$ref": "https://mission.schemas/v1/common.json#/$defs/gramsInt" }
+      "mass_g": { "$ref": "../defs/common.json#/$defs/gramsInt" }
     },
     "required": ["id", "name", "consumable"],
     "examples": [

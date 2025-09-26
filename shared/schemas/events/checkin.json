@@ -1,17 +1,16 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://mission.schemas/v1/events/checkin.json",
     "title": "Check-In",
     "description": "Place an object into a zone or into a nested CTB path (updates placement).",
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "objectType": { "$ref": "https://mission.schemas/v1/common.json#/$defs/ObjectType" },
-      "objectId":   { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
-      "zoneId":     { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+      "objectType": { "$ref": "../defs/common.json#/$defs/ObjectType" },
+      "objectId":   { "$ref": "../defs/common.json#/$defs/uuidV7" },
+      "zoneId":     { "$ref": "../defs/common.json#/$defs/uuidV7" },
       "ctbPath": {
         "type": "array",
-        "items": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+        "items": { "$ref": "../defs/common.json#/$defs/uuidV7" },
         "minItems": 0,
         "maxItems": 5,
         "uniqueItems": true
@@ -22,7 +21,7 @@
     "anyOf": [
       {
         "type": "object",
-        "properties": { "zoneId": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" } },
+        "properties": { "zoneId": { "$ref": "../defs/common.json#/$defs/uuidV7" } },
         "required": ["zoneId"]
       },
       {

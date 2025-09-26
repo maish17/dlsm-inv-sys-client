@@ -1,0 +1,1117 @@
+{
+  "deviceCode": "KIOSK-01",
+  "producedAt": "2025-09-09T16:00:00Z",
+  "events": [
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708100",
+      "eventKey": "KIOSK-01:1736200000000:100",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708101",
+      "eventKey": "KIOSK-01:1736200000000:101",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708102",
+      "eventKey": "KIOSK-01:1736200000000:102",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708103",
+      "eventKey": "KIOSK-01:1736200000000:103",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708104",
+      "eventKey": "KIOSK-01:1736200000000:104",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708105",
+      "eventKey": "KIOSK-01:1736200000000:105",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708106",
+      "eventKey": "KIOSK-01:1736200000000:106",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708107",
+      "eventKey": "KIOSK-01:1736200000000:107",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708108",
+      "eventKey": "KIOSK-01:1736200000000:108",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708109",
+      "eventKey": "KIOSK-01:1736200000000:109",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708110",
+      "eventKey": "KIOSK-01:1736200000000:110",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708111",
+      "eventKey": "KIOSK-01:1736200000000:111",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708112",
+      "eventKey": "KIOSK-01:1736200000000:112",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708113",
+      "eventKey": "KIOSK-01:1736200000000:113",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708114",
+      "eventKey": "KIOSK-01:1736200000000:114",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708115",
+      "eventKey": "KIOSK-01:1736200000000:115",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708116",
+      "eventKey": "KIOSK-01:1736200000000:116",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708117",
+      "eventKey": "KIOSK-01:1736200000000:117",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708118",
+      "eventKey": "KIOSK-01:1736200000000:118",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708119",
+      "eventKey": "KIOSK-01:1736200000000:119",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708120",
+      "eventKey": "KIOSK-01:1736200000000:120",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708121",
+      "eventKey": "KIOSK-01:1736200000000:121",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708122",
+      "eventKey": "KIOSK-01:1736200000000:122",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708123",
+      "eventKey": "KIOSK-01:1736200000000:123",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708124",
+      "eventKey": "KIOSK-01:1736200000000:124",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708125",
+      "eventKey": "KIOSK-01:1736200000000:125",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708126",
+      "eventKey": "KIOSK-01:1736200000000:126",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708127",
+      "eventKey": "KIOSK-01:1736200000000:127",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708128",
+      "eventKey": "KIOSK-01:1736200000000:128",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708129",
+      "eventKey": "KIOSK-01:1736200000000:129",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708130",
+      "eventKey": "KIOSK-01:1736200000000:130",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708131",
+      "eventKey": "KIOSK-01:1736200000000:131",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708132",
+      "eventKey": "KIOSK-01:1736200000000:132",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708133",
+      "eventKey": "KIOSK-01:1736200000000:133",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708134",
+      "eventKey": "KIOSK-01:1736200000000:134",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708135",
+      "eventKey": "KIOSK-01:1736200000000:135",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708136",
+      "eventKey": "KIOSK-01:1736200000000:136",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708137",
+      "eventKey": "KIOSK-01:1736200000000:137",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708138",
+      "eventKey": "KIOSK-01:1736200000000:138",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708139",
+      "eventKey": "KIOSK-01:1736200000000:139",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708140",
+      "eventKey": "KIOSK-01:1736200000000:140",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708141",
+      "eventKey": "KIOSK-01:1736200000000:141",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708142",
+      "eventKey": "KIOSK-01:1736200000000:142",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708143",
+      "eventKey": "KIOSK-01:1736200000000:143",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708144",
+      "eventKey": "KIOSK-01:1736200000000:144",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708145",
+      "eventKey": "KIOSK-01:1736200000000:145",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708146",
+      "eventKey": "KIOSK-01:1736200000000:146",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708147",
+      "eventKey": "KIOSK-01:1736200000000:147",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708148",
+      "eventKey": "KIOSK-01:1736200000000:148",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708149",
+      "eventKey": "KIOSK-01:1736200000000:149",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708150",
+      "eventKey": "KIOSK-01:1736200000000:150",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708151",
+      "eventKey": "KIOSK-01:1736200000000:151",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708152",
+      "eventKey": "KIOSK-01:1736200000000:152",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708153",
+      "eventKey": "KIOSK-01:1736200000000:153",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708154",
+      "eventKey": "KIOSK-01:1736200000000:154",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708155",
+      "eventKey": "KIOSK-01:1736200000000:155",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708156",
+      "eventKey": "KIOSK-01:1736200000000:156",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708157",
+      "eventKey": "KIOSK-01:1736200000000:157",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708158",
+      "eventKey": "KIOSK-01:1736200000000:158",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708159",
+      "eventKey": "KIOSK-01:1736200000000:159",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708160",
+      "eventKey": "KIOSK-01:1736200000000:160",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708161",
+      "eventKey": "KIOSK-01:1736200000000:161",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708162",
+      "eventKey": "KIOSK-01:1736200000000:162",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708163",
+      "eventKey": "KIOSK-01:1736200000000:163",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708164",
+      "eventKey": "KIOSK-01:1736200000000:164",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708165",
+      "eventKey": "KIOSK-01:1736200000000:165",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708166",
+      "eventKey": "KIOSK-01:1736200000000:166",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708167",
+      "eventKey": "KIOSK-01:1736200000000:167",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708168",
+      "eventKey": "KIOSK-01:1736200000000:168",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708169",
+      "eventKey": "KIOSK-01:1736200000000:169",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708170",
+      "eventKey": "KIOSK-01:1736200000000:170",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708171",
+      "eventKey": "KIOSK-01:1736200000000:171",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708172",
+      "eventKey": "KIOSK-01:1736200000000:172",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708173",
+      "eventKey": "KIOSK-01:1736200000000:173",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708174",
+      "eventKey": "KIOSK-01:1736200000000:174",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708175",
+      "eventKey": "KIOSK-01:1736200000000:175",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708176",
+      "eventKey": "KIOSK-01:1736200000000:176",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708177",
+      "eventKey": "KIOSK-01:1736200000000:177",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708178",
+      "eventKey": "KIOSK-01:1736200000000:178",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708179",
+      "eventKey": "KIOSK-01:1736200000000:179",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708180",
+      "eventKey": "KIOSK-01:1736200000000:180",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708181",
+      "eventKey": "KIOSK-01:1736200000000:181",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708182",
+      "eventKey": "KIOSK-01:1736200000000:182",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708183",
+      "eventKey": "KIOSK-01:1736200000000:183",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708184",
+      "eventKey": "KIOSK-01:1736200000000:184",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708185",
+      "eventKey": "KIOSK-01:1736200000000:185",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708186",
+      "eventKey": "KIOSK-01:1736200000000:186",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708187",
+      "eventKey": "KIOSK-01:1736200000000:187",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708188",
+      "eventKey": "KIOSK-01:1736200000000:188",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708189",
+      "eventKey": "KIOSK-01:1736200000000:189",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708190",
+      "eventKey": "KIOSK-01:1736200000000:190",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708191",
+      "eventKey": "KIOSK-01:1736200000000:191",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708192",
+      "eventKey": "KIOSK-01:1736200000000:192",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708193",
+      "eventKey": "KIOSK-01:1736200000000:193",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708194",
+      "eventKey": "KIOSK-01:1736200000000:194",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708195",
+      "eventKey": "KIOSK-01:1736200000000:195",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708196",
+      "eventKey": "KIOSK-01:1736200000000:196",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708197",
+      "eventKey": "KIOSK-01:1736200000000:197",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708198",
+      "eventKey": "KIOSK-01:1736200000000:198",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708199",
+      "eventKey": "KIOSK-01:1736200000000:199",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7081100",
+      "eventKey": "KIOSK-01:1736200000000:200",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+      }
+    }
+  ]
+}

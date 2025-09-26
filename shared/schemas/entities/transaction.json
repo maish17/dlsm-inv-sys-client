@@ -1,17 +1,16 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://mission.schemas/v1/entities/transaction.json",
     "title": "Transaction",
     "description": "Checkout lifecycle record for an Item or Container.",
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "id": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
-      "objectType": { "$ref": "https://mission.schemas/v1/common.json#/$defs/ObjectType" },
-      "objectId": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
-      "status": { "$ref": "https://mission.schemas/v1/common.json#/$defs/TxStatus" },
-      "checkoutAt": { "$ref": "https://mission.schemas/v1/common.json#/$defs/timestamp" },
-      "returnedAt": { "$ref": "https://mission.schemas/v1/common.json#/$defs/timestamp" }
+      "id": { "$ref": "../defs/common.json#/$defs/uuidV7" },
+      "objectType": { "$ref": "../defs/common.json#/$defs/ObjectType" },
+      "objectId": { "$ref": "../defs/common.json#/$defs/uuidV7" },
+      "status": { "$ref": "../defs/common.json#/$defs/TxStatus" },
+      "checkoutAt": { "$ref": "../defs/common.json#/$defs/timestamp" },
+      "returnedAt": { "$ref": "../defs/common.json#/$defs/timestamp" }
     },
     "required": ["id", "objectType", "objectId", "status", "checkoutAt"],
     "examples": [

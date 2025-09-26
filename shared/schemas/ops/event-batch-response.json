@@ -1,12 +1,11 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://mission.schemas/v1/ops/event-batch-response.json",
     "title": "Event Batch Response",
     "description": "Per-event results with counters and optional backpressure hints.",
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "serverTime":     { "$ref": "https://mission.schemas/v1/common.json#/$defs/timestamp" },
+      "serverTime":     { "$ref": "../defs/common.json#/$defs/timestamp" },
       "nextSeqExpected":{ "type": "integer", "minimum": 0 },
       "retryAfterSec":  { "type": "integer", "minimum": 0, "maximum": 86400, "description": "Client should wait this many seconds before retrying if present (max 24h)." },
       "rejected":       { "type": "integer", "minimum": 0 },
@@ -19,10 +18,10 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "eventId":   { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+            "eventId":   { "$ref": "../defs/common.json#/$defs/uuidV7" },
             "eventKey":  { "type": "string", "pattern": "^[A-Z0-9-]{3,40}:[0-9]{13}:[0-9]{1,6}$" },
             "status":    { "type": "string", "enum": ["ACCEPTED", "REJECTED", "DUPLICATE"] },
-             "code": { "$ref": "https://mission.schemas/v1/common.json#/$defs/ErrorCode" },
+             "code": { "$ref": "../defs/common.json#/$defs/ErrorCode" },
             "message":   { "type": "string", "minLength": 1, "maxLength": 300 },
             "eventIndex":{ "type": "integer", "minimum": 0 }
           },

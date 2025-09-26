@@ -1,14 +1,13 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://mission.schemas/v1/events/checkout.json",
     "title": "Check-Out",
     "description": "Take an object out of stock/service (opens a transaction).",
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "objectType": { "$ref": "https://mission.schemas/v1/common.json#/$defs/ObjectType" },
-      "objectId":   { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
-      "expectedReturnAt": { "$ref": "https://mission.schemas/v1/common.json#/$defs/timestamp" },
+      "objectType": { "$ref": "../defs/common.json#/$defs/ObjectType" },
+      "objectId":   { "$ref": "../defs/common.json#/$defs/uuidV7" },
+      "expectedReturnAt": { "$ref": "../defs/common.json#/$defs/timestamp" },
       "reason": { "type": "string", "minLength": 1, "maxLength": 200 }
     },
     "required": ["objectType", "objectId"],

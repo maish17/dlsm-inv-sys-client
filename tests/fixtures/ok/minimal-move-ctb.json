@@ -1,0 +1,21 @@
+{
+  "deviceCode": "KIOSK-01",
+  "producedAt": "2025-09-09T16:00:00Z",
+  "events": [
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708009",
+      "eventKey": "KIOSK-01:1736200000000:9",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "deviceCode": "KIOSK-01",
+      "kind": "MOVE",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "toCtbPath": [
+          "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080aa"
+        ]
+      }
+    }
+  ],
+  "batchId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708200"
+}

@@ -1,0 +1,17 @@
+{
+  "deviceCode": "KIOSK-01",
+  "producedAt": "2025-09-09T16:00:00Z",
+  "events": [
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708006",
+      "eventKey": "KIOSK-01:1736200000000:6",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "deviceCode": "KIOSK-01",
+      "kind": "RETURN",
+      "payload": {
+        "txId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080de"
+      }
+    }
+  ],
+  "batchId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708200"
+}

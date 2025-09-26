@@ -1,6 +1,5 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://mission.schemas/v1/common.json",
   "title": "Common Primitives & Enums",
   "description": "Canonical primitives and enums for the Mission Inventory System.",
   "$comment": "Governed by Schema Governance v1.4. Changes follow MAJOR/MINOR/PATCH with ICD refs.",

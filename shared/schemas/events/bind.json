@@ -1,29 +1,31 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://mission.schemas/v1/events/bind.json",
     "title": "Bind Tag",
     "description": "Associate a physical tag with an Item/Container or a Zone (mutually exclusive).",
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "tagKind": { "$ref": "https://mission.schemas/v1/common.json#/$defs/TagKind" },
-      "tagUid":  { "$ref": "https://mission.schemas/v1/common.json#/$defs/tagUid" },
-      "note":    { "type": "string", "minLength": 1, "maxLength": 200 }
+      "tagKind": { "$ref": "../defs/common.json#/$defs/TagKind" },
+      "tagUid":  { "$ref": "../defs/common.json#/$defs/tagUid" },
+      "note":    { "type": "string", "minLength": 1, "maxLength": 200 },
+      "objectType": { "$ref": "../defs/common.json#/$defs/ObjectType" },
+      "objectId":   { "$ref": "../defs/common.json#/$defs/uuidV7" },
+      "zoneId":     { "$ref": "../defs/common.json#/$defs/uuidV7" }
     },
     "required": ["tagKind", "tagUid"],
     "oneOf": [
       {
         "type": "object",
         "properties": {
-          "objectType": { "$ref": "https://mission.schemas/v1/common.json#/$defs/ObjectType" },
-          "objectId":   { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" }
+          "objectType": { "$ref": "../defs/common.json#/$defs/ObjectType" },
+          "objectId":   { "$ref": "../defs/common.json#/$defs/uuidV7" }
         },
         "required": ["objectType", "objectId"]
       },
       {
         "type": "object",
         "properties": {
-          "zoneId": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" }
+          "zoneId": { "$ref": "../defs/common.json#/$defs/uuidV7" }
         },
         "required": ["zoneId"]
       }

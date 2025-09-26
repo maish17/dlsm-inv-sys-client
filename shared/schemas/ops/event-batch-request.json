@@ -1,15 +1,14 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://mission.schemas/v1/ops/event-batch-request.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema", 
     "title": "Event Batch Request",
     "description": "Device-submitted batch of event envelopes with device metadata.",
     "type": "object",
     "additionalProperties": false,
     "properties": {
-         "deviceCode": { "$ref": "https://mission.schemas/v1/common.json#/$defs/deviceCode" },
-         "swVersion":  { "$ref": "https://mission.schemas/v1/common.json#/$defs/semver" },
-      "batchId":    { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
-      "producedAt": { "$ref": "https://mission.schemas/v1/common.json#/$defs/timestamp" },
+      "deviceCode": { "$ref": "../defs/common.json#/$defs/deviceCode" },
+      "swVersion":  { "$ref": "../defs/common.json#/$defs/semver" },
+      "batchId":    { "$ref": "../defs/common.json#/$defs/uuidV7" },
+      "producedAt": { "$ref": "../defs/common.json#/$defs/timestamp" },
       "seqStart":   { "type": "integer", "minimum": 0 },
       "events": {
         "type": "array",
@@ -17,12 +16,12 @@
         "maxItems": 100,
         "items": {
             "allOf": [
-              { "$ref": "https://mission.schemas/v1/events/event.json" },
+              { "$ref": "../events/event.json" },
               {
                 "type": "object",
                 "properties": {
                   "eventKey": {
-                    "$ref": "https://mission.schemas/v1/events/event.json#/properties/eventKey"
+                    "$ref": "../events/event.json#/properties/eventKey"
                   }
                 },
                 "required": ["eventKey"]
@@ -31,7 +30,7 @@
           }
       }
     },
-    "required": ["deviceCode", "producedAt", "events"],
+    "required": ["deviceCode", "batchId", "producedAt", "events"],
     "examples": [
       {
         "deviceCode": "KIOSK-01",

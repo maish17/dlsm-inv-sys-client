@@ -1,29 +1,28 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://mission.schemas/v1/entities/placement.json",
     "title": "Placement",
     "description": "Current location snapshot for an object (Item or Container). Read-model.",
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "objectType": { "$ref": "https://mission.schemas/v1/common.json#/$defs/ObjectType" },
-      "objectId": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
-      "zoneId": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+      "objectType": { "$ref": "../defs/common.json#/$defs/ObjectType" },
+      "objectId": { "$ref": "../defs/common.json#/$defs/uuidV7" },
+      "zoneId": { "$ref": "../defs/common.json#/$defs/uuidV7" },
       "ctbPath": {
         "type": "array",
-        "items": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
+        "items": { "$ref": "../defs/common.json#/$defs/uuidV7" },
         "minItems": 0,
         "maxItems": 5,
         "uniqueItems": true
       },
-      "updatedAt": { "$ref": "https://mission.schemas/v1/common.json#/$defs/timestamp" }
+      "updatedAt": { "$ref": "../defs/common.json#/$defs/timestamp" }
     },
     "required": ["objectType", "objectId", "ctbPath", "updatedAt"],
     "anyOf": [
         {
             "type": "object",
             "properties": {
-                "zoneId": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" }
+                "zoneId": { "$ref": "../defs/common.json#/$defs/uuidV7" }
             },
             "required": ["zoneId"]
         },

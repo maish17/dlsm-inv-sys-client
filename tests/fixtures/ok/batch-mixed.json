@@ -1,0 +1,71 @@
+{
+  "deviceCode": "KIOSK-01",
+  "swVersion": "0.1.0",
+  "batchId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708200",
+  "producedAt": "2025-09-09T16:00:00Z",
+  "seqStart": 40,
+  "events": [
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708040",
+      "eventKey": "KIOSK-01:1736200000000:40",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "deviceCode": "KIOSK-01",
+      "kind": "BIND",
+      "payload": {
+        "tagKind": "NFC_HF",
+        "tagUid": "04A1B2C3D4E5F6",
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708041",
+      "eventKey": "KIOSK-01:1736200000000:41",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "deviceCode": "KIOSK-01",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "zoneId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3",
+        "ctbPath": []
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708042",
+      "eventKey": "KIOSK-01:1736200000000:42",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "deviceCode": "KIOSK-01",
+      "kind": "CHECKOUT",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "expectedReturnAt": "2025-09-10T16:00:00Z"
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708043",
+      "eventKey": "KIOSK-01:1736200000000:43",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "deviceCode": "KIOSK-01",
+      "kind": "MOVE",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "toCtbPath": [
+          "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080aa"
+        ]
+      }
+    },
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708044",
+      "eventKey": "KIOSK-01:1736200000000:44",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "deviceCode": "KIOSK-01",
+      "kind": "RETURN",
+      "payload": {
+        "txId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080de"
+      }
+    }
+  ]
+}

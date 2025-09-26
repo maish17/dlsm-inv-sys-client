@@ -1,0 +1,24 @@
+{
+    "deviceCode": "KIOSK-01",
+    "producedAt": "2025-09-09T16:00:00Z",
+    "events": [
+      {
+        "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f70805a",
+        "eventKey": "KIOSK-01:1736200000000:60",
+        "producedAt": "2025-09-09T16:00:00Z",
+        "kind": "CHECKIN",
+        "payload": {
+          "objectType": "ITEM",
+          "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+          "ctbPath": [
+            "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080aa",
+            "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080ab",
+            "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080ac",
+            "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080ad",
+            "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080ae",
+            "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080af"
+          ]
+        }
+      }
+    ]
+  }

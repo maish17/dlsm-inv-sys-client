@@ -1,0 +1,23 @@
+{
+  "deviceCode": "KIOSK-01",
+  "swVersion": "0.1.0",
+  "batchId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080b1",
+  "producedAt": "2025-09-09T16:00:00Z",
+  "seqStart": 42,
+  "events": [
+    {
+      "eventId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708001",
+      "eventKey": "KIOSK-01:1736200000000:42",
+      "producedAt": "2025-09-09T16:00:00Z",
+      "deviceCode": "KIOSK-01",
+      "kind": "CHECKIN",
+      "payload": {
+        "objectType": "ITEM",
+        "objectId": "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2",
+        "ctbPath": [
+          "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080aa"
+        ]
+      }
+    }
+  ]
+}

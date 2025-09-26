@@ -1,10 +1,17 @@
 {
 	"devDependencies": {
+		"@redocly/cli": "^2.2.1",
 		"ajv": "^8.17.1",
+		"ajv-cli": "^5.0.0",
 		"ajv-formats": "^3.0.1",
-		"ajv-cli": "^5.0.0"
+		"swagger-cli": "^4.0.4"
 	},
 	"scripts": {
-		"schemas:compile": "node scripts/compile-schemas.mjs"
-	  }
+		"schemas:compile": "node scripts/compile-schemas.mjs",
+		"openapi:lint": "redocly lint shared/openapi/mission-inventory.yaml",
+		"openapi:bundle": "swagger-cli bundle -o dist/openapi.json -t json shared/openapi/mission-inventory.yaml",
+		"fixtures:ok":  "node scripts/test-fixtures.mjs",
+		"fixtures:bad": "node scripts/test-fixtures.mjs",
+		"fixtures:all": "node scripts/test-fixtures.mjs"
+	}
 }

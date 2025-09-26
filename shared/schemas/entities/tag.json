@@ -1,14 +1,13 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://mission.schemas/v1/entities/tag.json",
     "title": "Tag",
     "description": "Physical NFC label/card that devices scan.",
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "id": { "$ref": "https://mission.schemas/v1/common.json#/$defs/uuidV7" },
-      "kind": { "$ref": "https://mission.schemas/v1/common.json#/$defs/TagKind" },
-      "uid": { "$ref": "https://mission.schemas/v1/common.json#/$defs/tagUid" }
+      "id": { "$ref": "../defs/common.json#/$defs/uuidV7" },
+      "kind": { "$ref": "../defs/common.json#/$defs/TagKind" },
+      "uid": { "$ref": "../defs/common.json#/$defs/tagUid" }
     },
     "required": ["id", "kind", "uid"],
     "examples": [

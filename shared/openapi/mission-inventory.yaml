@@ -1,0 +1,72 @@
+openapi: 3.1.0
+info:
+  title: Mission Inventory API
+  version: 0.1.0-pdr
+  license:
+    name: Apache-2.0
+    url: https://opensource.org/license/apache-2-0/
+servers:
+  - url: http://jetson.local:8080/api
+    description: Jetson LAN
+  - url: http://localhost:8080/api
+    description: Local dev
+
+paths:
+  /ops/events:
+    post:
+      tags: [ops]
+      summary: Submit a batch of events
+      operationId: postEventBatch
+      security:
+        - deviceToken: [] # or: mtls: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/ops/event-batch-request.json
+            examples:
+              minimal:
+                value:
+                  deviceCode: KIOSK-01
+                  swVersion: "0.1.0"
+                  batchId: "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080b1"
+                  producedAt: "2025-09-09T16:00:00Z"
+                  seqStart: 42
+                  events:
+                    - eventId: "018f1b3c-9c8a-7a1b-8d2c-4d5e6f708001"
+                      eventKey: "KIOSK-01:1736200000000:42"
+                      producedAt: "2025-09-09T16:00:00Z"
+                      deviceCode: "KIOSK-01"
+                      kind: CHECKIN
+                      payload:
+                        objectType: ITEM
+                        objectId: "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080c2"
+                        zoneId: "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080d3"
+                        ctbPath:
+                          - "018f1b3c-9c8a-7a1b-8d2c-4d5e6f7080aa"
+      responses:
+        "200":
+          description: Per-event verdicts
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/ops/event-batch-response.json
+        "400": { description: Schema validation failed }
+        "401": { description: Unauthorized device }
+        "429":
+          description: Backpressure; client should pause before retrying.
+          headers:
+            Retry-After:
+              description: Seconds to wait before retrying.
+              schema: { type: integer, minimum: 0, maximum: 86400 }
+        "500": { description: Internal error }
+
+components:
+  securitySchemes:
+    deviceToken:
+      type: apiKey
+      in: header
+      name: X-Device-Token
+    # mtls:
+    #   type: mutualTLS
