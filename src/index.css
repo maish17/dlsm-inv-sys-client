@@ -1,0 +1,11 @@
+/* web/src/index.css — neutralized so it doesn't fight app.css */
+:root {
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
