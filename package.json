@@ -10,8 +10,12 @@
 		"schemas:compile": "node scripts/compile-schemas.mjs",
 		"openapi:lint": "redocly lint shared/openapi/mission-inventory.yaml",
 		"openapi:bundle": "swagger-cli bundle -o dist/openapi.json -t json shared/openapi/mission-inventory.yaml",
-		"fixtures:ok":  "node scripts/test-fixtures.mjs",
-		"fixtures:bad": "node scripts/test-fixtures.mjs",
-		"fixtures:all": "node scripts/test-fixtures.mjs"
+		"fixtures:all": "node scripts/test-fixtures.mjs",
+		"dev:server": "node dev-server/server.mjs",
+		"hit:ok": "curl -sS -H 'content-type: application/json' --data @tests/fixtures/ok/batch-checkin.json http://localhost:8080/api/ops/events | jq",
+		"get:placement:ok": "OID=$(jq -r '.events[0].payload.objectId' tests/fixtures/ok/batch-checkin.json); OT=$(jq -r '.events[0].payload.objectType' tests/fixtures/ok/batch-checkin.json); curl -sS \"http://localhost:8080/api/read/placement/$OT/$OID\" | jq"
+	},
+	"dependencies": {
+		"pg": "^8.16.3"
 	}
 }
