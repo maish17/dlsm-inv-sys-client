@@ -23,7 +23,7 @@ CREATE TABLE
         UNIQUE (rack, shelf, depth)
     );
 
--- NEW: Users (crew). Keep it simple + idempotent friendly.
+-- Users (crew). Simple, idempotent.
 CREATE TABLE
     IF NOT EXISTS aether.users (
         user_id uuid PRIMARY KEY DEFAULT gen_random_uuid (),
@@ -45,9 +45,9 @@ CREATE TABLE
         description text,
         size_m3 numeric(10, 4),
         mass_kg numeric(10, 3),
-        status text NOT NULL DEFAULT 'ACTIVE' CHECK (status IN ('ACTIVE', 'RETIRED')),
+        status aether.item_status NOT NULL DEFAULT 'ACTIVE',
         site_id uuid NOT NULL REFERENCES aether.storage_sites (site_id) ON DELETE RESTRICT,
-        user_id uuid REFERENCES aether.users (user_id) ON DELETE SET NULL, -- << optional owner
+        user_id uuid REFERENCES aether.users (user_id) ON DELETE SET NULL,
         created_at timestamptz NOT NULL DEFAULT now (),
         updated_at timestamptz NOT NULL DEFAULT now ()
     );
@@ -65,7 +65,7 @@ CREATE TABLE
 CREATE TABLE
     IF NOT EXISTS aether.clothes (
         item_id uuid PRIMARY KEY REFERENCES aether.items (item_id) ON DELETE CASCADE,
-        size_label text,
+        size_label aether.clothing_size DEFAULT 'CUSTOM', -- enum; can be NULL too
         color text,
         material text,
         created_at timestamptz NOT NULL DEFAULT now (),
@@ -86,7 +86,7 @@ CREATE TABLE
 CREATE TABLE
     IF NOT EXISTS aether.meal_types (
         code smallint PRIMARY KEY CHECK (code BETWEEN 0 AND 255),
-        kind text NOT NULL CHECK (kind IN ('BASE', 'SPECIAL')),
+        kind aether.meal_kind NOT NULL,
         label text NOT NULL,
         energy_kcal integer CHECK (energy_kcal >= 0),
         vit_a_mcg_rae integer CHECK (vit_a_mcg_rae >= 0),
@@ -114,7 +114,7 @@ CREATE TABLE
         meal_type_code smallint NOT NULL REFERENCES aether.meal_types (code) ON DELETE RESTRICT,
         is_special boolean NOT NULL DEFAULT false,
         expiration_date date NOT NULL,
-        status text NOT NULL DEFAULT 'FRESH' CHECK (status IN ('FRESH', 'EXPIRED', 'DISPOSED')),
+        status aether.meal_status NOT NULL DEFAULT 'FRESH',
         created_at timestamptz NOT NULL DEFAULT now (),
         updated_at timestamptz NOT NULL DEFAULT now (),
         UNIQUE (blob_id, slot)
@@ -126,10 +126,10 @@ CREATE TABLE
         item_id uuid PRIMARY KEY REFERENCES aether.items (item_id) ON DELETE CASCADE,
         manufacturer text,
         model text,
-        serial_no text, -- often unique per unit
-        calibration_due date, -- next calibration due date
-        power_watts numeric(10, 2), -- nominal power draw
-        hazardous boolean NOT NULL DEFAULT false, -- e.g., laser, chemicals, HV
+        serial_no text,
+        calibration_due date,
+        power_watts numeric(10, 2),
+        hazardous boolean NOT NULL DEFAULT false,
         notes text,
         created_at timestamptz NOT NULL DEFAULT now (),
         updated_at timestamptz NOT NULL DEFAULT now ()
@@ -139,8 +139,8 @@ CREATE TABLE
 CREATE TABLE
     IF NOT EXISTS aether.spare_parts (
         item_id uuid PRIMARY KEY REFERENCES aether.items (item_id) ON DELETE CASCADE,
-        part_no text, -- manufacturer P/N
-        compatible_with text, -- free-form: model list / system
+        part_no text,
+        compatible_with text,
         lot_code text,
         lifetime_cycles integer CHECK (
             lifetime_cycles IS NULL
@@ -155,11 +155,11 @@ CREATE TABLE
 CREATE TABLE
     IF NOT EXISTS aether.medical_supplies (
         item_id uuid PRIMARY KEY REFERENCES aether.items (item_id) ON DELETE CASCADE,
-        category text, -- 'drug','device','consumable', etc. (free-form for now)
+        category aether.medical_category, -- enum
         lot_code text,
         expiry_date date,
         sterile boolean NOT NULL DEFAULT false,
-        controlled boolean NOT NULL DEFAULT false, -- needs special custody?
+        controlled boolean NOT NULL DEFAULT false,
         created_at timestamptz NOT NULL DEFAULT now (),
         updated_at timestamptz NOT NULL DEFAULT now ()
     );
@@ -168,7 +168,7 @@ CREATE TABLE
 CREATE TABLE
     IF NOT EXISTS aether.hygiene_items (
         item_id uuid PRIMARY KEY REFERENCES aether.items (item_id) ON DELETE CASCADE,
-        category text, -- 'toothpaste','wipes','soap', etc.
+        category aether.hygiene_category, -- enum
         expiry_date date,
         units integer CHECK (
             units IS NULL
@@ -183,9 +183,9 @@ CREATE TABLE
 CREATE TABLE
     IF NOT EXISTS aether.waste_containers (
         item_id uuid PRIMARY KEY REFERENCES aether.items (item_id) ON DELETE CASCADE,
-        waste_type text, -- 'DRY','WET','BIO','HAZ', etc. (free-form for now)
+        waste_type aether.waste_type, -- enum
         sealed boolean NOT NULL DEFAULT false,
-        generated_at timestamptz, -- when the waste started being collected
+        generated_at timestamptz,
         volume_l numeric(10, 3) CHECK (
             volume_l IS NULL
             OR volume_l >= 0

@@ -1,3 +1,4 @@
+/* app.css */
 :root {
   /* Brand */
   --navy: #0d2238;
@@ -71,7 +72,21 @@ code {
   margin: 0 0 1rem;
 }
 
-/* Header (light over both hero & content) */
+.row {
+  display: flex;
+  gap: 1rem;
+}
+.between {
+  justify-content: space-between;
+}
+.center-v {
+  align-items: center;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+
+/* Header */
 .header {
   position: sticky;
   top: 0;
@@ -94,19 +109,6 @@ code {
   background: var(--orange);
   box-shadow: 0 0 0 6px var(--ring);
 }
-.row {
-  display: flex;
-  gap: 1rem;
-}
-.between {
-  justify-content: space-between;
-}
-.center-v {
-  align-items: center;
-}
-.wrap {
-  flex-wrap: wrap;
-}
 .nav {
   display: flex;
   gap: 1rem;
@@ -121,7 +123,7 @@ code {
   text-underline-offset: 3px;
 }
 
-/* Hero (dark, full-bleed) */
+/* Hero */
 .section.hero {
   background: linear-gradient(
     180deg,
@@ -159,25 +161,6 @@ code {
   flex-wrap: wrap;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.72rem 1.05rem;
-  border-radius: 0.9rem;
-  border: 1px solid var(--line);
-  background: #fff;
-  color: var(--text);
-  font-weight: 700;
-}
-.btn.primary {
-  background: var(--orange);
-  color: #0b0b0b;
-  border-color: transparent;
-}
-
-/* Make hero buttons pop on dark */
 .section.hero .btn {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.18);
@@ -185,10 +168,6 @@ code {
 }
 .section.hero .btn:hover {
   background: rgba(255, 255, 255, 0.14);
-}
-.section.hero .btn.primary {
-  background: var(--orange);
-  color: #0b0b0b;
 }
 
 .hero-art {
@@ -225,7 +204,7 @@ code {
   outline: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-/* Pills & stats */
+/* Pills, badges, stats */
 .pill {
   display: inline-block;
   padding: 0.35rem 0.6rem;
@@ -241,29 +220,50 @@ code {
   border-color: rgba(255, 255, 255, 0.2);
   color: #fff;
 }
-.hero-pills {
-  margin-top: 0.5rem;
-}
 
-.stat {
-  min-width: 180px;
-  padding: 14px 16px;
-  border-radius: 14px;
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  border: 1px solid var(--card-line);
   background: #fff;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-  margin: 0.25rem 0;
 }
-.stat-value {
-  font-weight: 800;
-  font-size: 1.05rem;
+.badge .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--muted);
 }
-.stat-label {
-  color: var(--muted);
-  font-size: 0.9rem;
+.badge.done {
+  border-color: #d8f2de;
+  background: #f2fbf5;
+  color: #1a7f3e;
+}
+.badge.done .dot {
+  background: #1a7f3e;
+}
+.badge.wip {
+  border-color: #ffe8bf;
+  background: #fff8e9;
+  color: #8a5a00;
+}
+.badge.wip .dot {
+  background: #b27606;
+}
+.badge.todo {
+  border-color: #e8edf5;
+  background: #f7f9fd;
+  color: #5c6e86;
+}
+.badge.todo .dot {
+  background: #5c6e86;
 }
 
-/* Features */
+/* Features & cards */
 .grid-features {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -280,50 +280,96 @@ code {
   margin: 0.1rem 0 0.45rem;
   font-size: clamp(1rem, 2.2vw, 1.18rem);
 }
-.card p {
-  margin: 0;
+.card-body {
   color: var(--muted);
+  display: grid;
+  gap: 0.6rem;
+}
+
+/* Lists */
+.bullets {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+.bullets li {
+  margin: 0.25rem 0;
+}
+.bullets.tight li {
+  margin: 0.15rem 0;
+}
+
+/* Steps */
+.steps {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.steps li {
+  margin: 0.4rem 0;
 }
 
 /* Two-column sections */
 .grid-two {
   display: grid;
-  align-items: center;
+  align-items: start;
   grid-template-columns: 1.1fr 0.9fr;
   gap: clamp(18px, 4vw, 40px);
 }
-.circle-stack {
-  position: relative;
-  min-height: 300px;
+
+/* Mono blocks */
+.mono {
+  margin: 0;
 }
-.circle {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  background: radial-gradient(
-    120% 120% at 30% 25%,
-    #ffffff 0%,
-    var(--soft) 55%,
-    transparent 100%
-  );
+.mono figcaption {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
 }
-.circle.lg {
-  width: min(70vw, 380px);
-  aspect-ratio: 1/1;
-  right: 0;
-  top: 0;
+.mono pre {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--code);
+  border: 1px solid var(--card-line);
+  overflow: auto;
 }
-.circle.md {
-  width: min(40vw, 230px);
-  aspect-ratio: 1/1;
-  right: 12%;
-  top: 44%;
+.kbd {
+  padding: 2px 6px;
+  border: 1px solid var(--card-line);
+  border-bottom-width: 3px;
+  border-radius: 6px;
+  background: #fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85rem;
 }
-.circle.sm {
-  width: min(28vw, 150px);
-  aspect-ratio: 1/1;
-  right: 38%;
-  top: 20%;
+
+/* Simple table */
+.table {
+  display: grid;
+  gap: 8px;
+}
+.table .thead,
+.table .trow {
+  display: grid;
+  grid-template-columns: 110px 1fr 1.3fr 130px;
+  gap: 10px;
+}
+.table .thead {
+  font-weight: 800;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+}
+.table .trow {
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.table .trow:last-child {
+  border-bottom: 0;
+}
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 /* Team */
@@ -347,7 +393,7 @@ code {
   box-shadow: var(--shadow);
 }
 
-/* Footer (dark anchor at bottom) */
+/* Footer */
 .footer {
   color: #fff;
   padding: 20px 0;
@@ -360,6 +406,10 @@ code {
   .grid-features {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .table .thead,
+  .table .trow {
+    grid-template-columns: 90px 1fr 1fr 120px;
+  }
 }
 @media (max-width: 820px) {
   .nav {
@@ -370,6 +420,14 @@ code {
   }
   .grid-two {
     grid-template-columns: 1fr;
+  }
+  .table .thead,
+  .table .trow {
+    grid-template-columns: 80px 1fr;
+  }
+  .table .trow > :nth-child(3),
+  .table .trow > :nth-child(4) {
+    display: none;
   }
 }
 @media (max-width: 520px) {

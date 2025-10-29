@@ -1,106 +1,143 @@
-import "dotenv/config";
+// services/edge-server/src/server.mjs
 import Fastify from "fastify";
 import { Pool } from "pg";
+import dotenv from "dotenv";
 
-const app = Fastify({
-  logger: { transport: { target: "pino-pretty" } },
+dotenv.config();
+const logPretty = process.env.NODE_ENV !== "production";
+const fastify = Fastify({
+  logger: logPretty ? { transport: { target: "pino-pretty" } } : true,
 });
 
+// --- Postgres pool ---
 const pool = new Pool({
-  host: process.env.PGHOST ?? "localhost",
-  port: Number(process.env.PGPORT ?? 5432),
-  user: process.env.PGUSER ?? "aether",
-  password: process.env.PGPASSWORD ?? "aether",
-  database: process.env.PGDATABASE ?? "aether",
+  host: process.env.PGHOST || "127.0.0.1",
+  port: Number(process.env.PGPORT || 5432),
+  user: process.env.PGUSER || "aether",
+  password: process.env.PGPASSWORD || "aether",
+  database: process.env.PGDATABASE || "aether",
 });
 
-// --- helpers -------------------------------------------------------
-const q = (text, params = []) => pool.query(text, params);
-
-app.get("/healthz", async () => ({ ok: true }));
-
-// GET all meals in a blob by RFID (ordered by slot)
-app.get("/api/blobs/:rfid/meals", async (req, rep) => {
-  const { rfid } = req.params;
-  const sql = `
-    SELECT m.meal_id, b.blob_id, m.slot,
-           m.meal_type_code, mt.kind AS meal_kind, mt.label AS meal_label,
-           m.is_special, m.expiration_date, m.status,
-           mt.energy_kcal, mt.vit_a_mcg_rae,
-           mt.vit_b2_mg, mt.vit_b3_mg, mt.vit_b4_mg, mt.vit_b5_mg, mt.vit_b6_mg,
-           mt.vit_b7_mg, mt.vit_b8_mg, mt.vit_b9_mg, mt.vit_b10_mg, mt.vit_b11_mg, mt.vit_b12_mg,
-           m.created_at, m.updated_at
-      FROM aether.blobs b
-      JOIN aether.meals m       ON m.blob_id = b.blob_id
-      JOIN aether.meal_types mt ON mt.code   = m.meal_type_code
-     WHERE b.rfid = $1
-     ORDER BY m.slot;
-  `;
-  const { rows } = await q(sql, [rfid]);
-  if (rows.length === 0) return rep.code(404).send({ error: "NOT_FOUND" });
-  return rows;
-});
-
-// PUT update a specific meal (by rfid + slot)
-app.put("/api/blobs/:rfid/meals/:slot", async (req, rep) => {
-  const { rfid, slot } = req.params;
-  const body = req.body ?? {};
-
-  // Accept a small set of fields
-  const fields = {};
-  if (body.meal_type_code !== undefined)
-    fields.meal_type_code = Number(body.meal_type_code);
-  if (body.is_special !== undefined)
-    fields.is_special = Boolean(body.is_special);
-  if (body.expiration_date !== undefined)
-    fields.expiration_date = body.expiration_date; // 'YYYY-MM-DD'
-  if (body.status !== undefined) fields.status = String(body.status); // e.g., 'FRESH'/'EXPIRED'/'USED'
-
-  const keys = Object.keys(fields);
-  if (keys.length === 0) return rep.code(400).send({ error: "NO_FIELDS" });
-
-  // Build dynamic UPDATE
-  const sets = keys.map((k, i) => `${k} = $${i + 1}`).join(", ");
-  const params = keys.map((k) => fields[k]);
-
-  const sql = `
-    WITH target AS (
-      SELECT blob_id FROM aether.blobs WHERE rfid = $${params.length + 1}
-    )
-    UPDATE aether.meals m
-       SET ${sets}, updated_at = now()
-      FROM target t
-     WHERE m.blob_id = t.blob_id AND m.slot = $${params.length + 2}
-     RETURNING m.*;
-  `;
-  const { rows } = await q(sql, [...params, rfid, Number(slot)]);
-  if (rows.length === 0) return rep.code(404).send({ error: "NOT_FOUND" });
-  return rows[0];
-});
-
-// POST create/register a blob
-app.post("/api/blobs", async (req, rep) => {
-  const { rfid, slot_count = 4 } = req.body ?? {};
-  if (!rfid || typeof rfid !== "string") {
-    return rep.code(400).send({ error: "BAD_RFID" });
+async function q(text, params = []) {
+  const client = await pool.connect();
+  try {
+    return await client.query(text, params);
+  } finally {
+    client.release();
   }
-  const { rows } = await q(
-    `INSERT INTO aether.blobs (rfid, slot_count, status)
-     VALUES ($1, $2, 'ACTIVE')
-     ON CONFLICT (rfid) DO NOTHING
-     RETURNING blob_id, rfid, slot_count, status, created_at, updated_at;`,
-    [rfid, Number(slot_count)]
-  );
-  if (rows.length === 0) return rep.code(200).send({ info: "EXISTS" });
-  return rows[0];
+}
+
+// --- Routes ---
+
+// Health (also checks DB)
+fastify.get("/health", async () => {
+  const r = await q("SELECT 1 as ok");
+  return { ok: true, db: r.rows[0].ok === 1, time: new Date().toISOString() };
 });
 
-// bootstrap
-const port = Number(process.env.PORT ?? 8080);
-app
-  .listen({ port, host: "0.0.0.0" })
-  .then(() => app.log.info(`API listening on http://localhost:${port}`))
+// Item details + inferred subtype + owner
+fastify.get("/api/read/item/:id", async (req, reply) => {
+  const { id } = req.params;
+  const sql = `
+    SELECT
+      i.item_id, i.rfid, i.name, i.description, i.size_m3, i.mass_kg,
+      i.status::text AS status, i.site_id, i.user_id, i.created_at, i.updated_at,
+      u.full_name AS owner_name,
+      CASE
+        WHEN c.item_id  IS NOT NULL THEN 'CLOTHES'
+        WHEN se.item_id IS NOT NULL THEN 'SCIENTIFIC_EQUIPMENT'
+        WHEN sp.item_id IS NOT NULL THEN 'SPARE_PART'
+        WHEN ms.item_id IS NOT NULL THEN 'MEDICAL_SUPPLY'
+        WHEN hi.item_id IS NOT NULL THEN 'HYGIENE_ITEM'
+        WHEN wc.item_id IS NOT NULL THEN 'WASTE_CONTAINER'
+        WHEN b.blob_id  IS NOT NULL THEN 'CTB'
+        ELSE 'GENERIC'
+      END AS subtype
+    FROM aether.items i
+    LEFT JOIN aether.users u                ON u.user_id = i.user_id
+    LEFT JOIN aether.blobs b                ON b.blob_id = i.item_id
+    LEFT JOIN aether.clothes c              ON c.item_id = i.item_id
+    LEFT JOIN aether.scientific_equipment se ON se.item_id = i.item_id
+    LEFT JOIN aether.spare_parts sp         ON sp.item_id = i.item_id
+    LEFT JOIN aether.medical_supplies ms    ON ms.item_id = i.item_id
+    LEFT JOIN aether.hygiene_items hi       ON hi.item_id = i.item_id
+    LEFT JOIN aether.waste_containers wc    ON wc.item_id = i.item_id
+    WHERE i.item_id = $1
+    LIMIT 1;
+  `;
+  const r = await q(sql, [id]);
+  if (r.rowCount === 0) return reply.code(404).send({ error: "NOT_FOUND" });
+  return r.rows[0];
+});
+
+// Effective location for an item (walk up container chain to outermost CTB/site)
+fastify.get("/api/read/item/:id/location", async (req, reply) => {
+  const { id } = req.params;
+  const sql = `
+    WITH RECURSIVE chain AS (
+      SELECT i.item_id, i.site_id, 0 AS lvl
+      FROM aether.items i
+      WHERE i.item_id = $1
+      UNION ALL
+      SELECT parent_i.item_id, parent_i.site_id, c.lvl + 1
+      FROM chain c
+      JOIN aether.ctb_contents cc   ON cc.child_item_id = c.item_id
+      JOIN aether.blobs pb          ON pb.blob_id = cc.parent_blob_id
+      JOIN aether.items parent_i    ON parent_i.item_id = pb.blob_id
+    )
+    SELECT s.rack, s.shelf, s.depth
+    FROM chain ch
+    JOIN aether.storage_sites s ON s.site_id = ch.site_id
+    ORDER BY ch.lvl DESC
+    LIMIT 1;
+  `;
+  const r = await q(sql, [id]);
+  if (r.rowCount === 0) return reply.code(404).send({ error: "NOT_FOUND" });
+  return { itemId: id, location: r.rows[0] };
+});
+
+// CTB slots view: list all slots with meal occupancies
+fastify.get("/api/read/ctb/:id/slots", async (req, reply) => {
+  const { id } = req.params;
+  const meta = await q(
+    `SELECT blob_id, slot_count FROM aether.blobs WHERE blob_id = $1`,
+    [id]
+  );
+  if (meta.rowCount === 0) return reply.code(404).send({ error: "NOT_FOUND" });
+
+  const { slot_count } = meta.rows[0];
+  const meals = await q(
+    `
+    SELECT m.slot, m.meal_id, m.status::text AS status,
+           m.expiration_date, m.meal_type_code, mt.kind::text AS meal_kind, mt.label
+    FROM aether.meals m
+    LEFT JOIN aether.meal_types mt ON mt.code = m.meal_type_code
+    WHERE m.blob_id = $1
+    `,
+    [id]
+  );
+
+  // build full slot map 1..slot_count
+  const bySlot = new Map(meals.rows.map((r) => [r.slot, r]));
+  const slots = Array.from({ length: slot_count }, (_, i) => {
+    const s = i + 1;
+    const meal = bySlot.get(s);
+    return {
+      slot: s,
+      occupied: !!meal,
+      meal: meal || null,
+    };
+  });
+
+  return { ctbId: id, slotCount: slot_count, slots };
+});
+
+// --- start ---
+const PORT = Number(process.env.PORT || 8080);
+fastify
+  .listen({ port: PORT, host: "0.0.0.0" })
+  .then((addr) => fastify.log.info(`Edge server listening on ${addr}`))
   .catch((err) => {
-    app.log.error(err);
+    fastify.log.error(err);
     process.exit(1);
   });
